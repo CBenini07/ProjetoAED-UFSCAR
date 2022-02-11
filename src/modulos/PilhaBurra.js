@@ -29,9 +29,5 @@ function PilhaBurra(tamanho){
         return pilha[topo];
     }
 
-    function getPilha(){
-        return pilha;
-    }
-
     return { cheia, vazia, push, pop }
 }
