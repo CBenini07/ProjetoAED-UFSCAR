@@ -25,9 +25,16 @@ function PilhaBurra(tamanho){
 
     //Desempilha
     function pop(){
-        topo--;
-        return pilha[topo];
+        if(!vazia()){
+            topo--;
+            return pilha[topo];
+        }
+        
+        //else
+        console.error("Pilha vazia!");
     }
 
     return { cheia, vazia, push, pop }
 }
+
+export { PilhaBurra }
