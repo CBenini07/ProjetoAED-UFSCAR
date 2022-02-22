@@ -1,0 +1,21 @@
+/* Estilando as células */
+
+.linha{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin: 2rem 0rem;
+}
+
+.celula{
+    box-sizing: border-box;
+    width: 6rem;
+    height: 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0.2rem solid black;
+    background-color: darkslategray;
+    border-radius: 10%;
+}

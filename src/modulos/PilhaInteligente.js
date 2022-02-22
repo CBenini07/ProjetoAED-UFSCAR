@@ -21,7 +21,7 @@ function PilhaInteligente(tamanho){
         return pilhaCopia
     }
 
-    //Remover um elemento (uma unica vez) da Pilha sem alterar o resto. Retorna bool se encontrou ou nao
+    //Remover um elemento (uma unica vez) da Pilha sem alterar o resto. Retorna bool se encontrou ou nao. Para eficiencia, não trabalhar com verificaElemento
     function removeElemento(item){
         const pilhatemp = PilhaBurra(tamanho);
         let achou = false;
@@ -43,9 +43,27 @@ function PilhaInteligente(tamanho){
         return achou;
     }
 
+    //Verifica se um elemento esta na pilha
+    function verificaElemento(item){
+        const pilhatemp = PilhaBurra(tamanho);
+        let achou = false;
+        while(!pilha.vazia() && !achou){
+            let valor = pilha.pop();
+            pilhatemp.push(valor);
+            if(valor == item){
+                achou = true;
+            }
+        }
+        //Reinserindo
+        while(!pilhatemp.vazia()){
+            pilha.push(pilhatemp.pop());
+        }
+
+        return achou
+    }
+
     //Inserindo metodos da pilhaburra, assim como metodos da pilhainteligente
-    return Object.assign({}, pilha, {copiaPilha, removeElemento});
+    return Object.assign({}, pilha, {copiaPilha, removeElemento, verificaElemento});
 }
 
 export{PilhaInteligente}
-

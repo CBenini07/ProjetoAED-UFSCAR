@@ -16,17 +16,17 @@
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modulos_hello_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modulos/hello.js */ \"./src/modulos/hello.js\");\n\n\nconsole.log('a');\nconsole.log('b');\nconsole.log('c');\n//a\n(0,_modulos_hello_js__WEBPACK_IMPORTED_MODULE_0__.test)();\n\n//# sourceURL=webpack://projetoaed-ufscar/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modulos_DOM__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modulos/DOM */ \"./src/modulos/DOM.js\");\n\n\ndocument.addEventListener('DOMContentLoaded', _modulos_DOM__WEBPACK_IMPORTED_MODULE_0__.DOM.init);\n\n//# sourceURL=webpack://projetoaed-ufscar/./src/index.js?");
 
 /***/ }),
 
-/***/ "./src/modulos/hello.js":
-/*!******************************!*\
-  !*** ./src/modulos/hello.js ***!
-  \******************************/
+/***/ "./src/modulos/DOM.js":
+/*!****************************!*\
+  !*** ./src/modulos/DOM.js ***!
+  \****************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"test\": () => (/* binding */ test)\n/* harmony export */ });\nfunction test (){\n    console.log('Hello World');\n};\n\n\n\n//# sourceURL=webpack://projetoaed-ufscar/./src/modulos/hello.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"DOM\": () => (/* binding */ DOM)\n/* harmony export */ });\n//Metodos de DOM aqui\n\nconst DOM = (() => {\n    //Variáveis locais\n    const cell = [];\n    const mainDiv =  document.getElementById('main');\n    //Função para iniciar o jogo\n    function init (){\n        //Criando a matriz principal. Div dentro de div. Acessar cada elemento por cell[i][j]\n        for(let i=0; i<6; i++){\n            //Criando o div de linha\n            const linha = document.createElement('div');\n            linha.classList.add('linha');\n            //Colunas da matriz\n            const coluna = [];\n            for(let j=0; j<6; j++){\n                //Div de coluna\n                const temp = document.createElement('div');\n                temp.classList.add('celula');\n                //Adicionando ao array\n                coluna.push(temp);\n                //Adicionando ao DOM\n                linha.appendChild(temp);\n            }\n            //Inserindo as colunas no array principal\n            cell.push(coluna);\n            //Inserindo linha no DOM\n            mainDiv.appendChild(linha);\n        }\n    }\n\n    return { init }\n})();\n\n\n\n//# sourceURL=webpack://projetoaed-ufscar/./src/modulos/DOM.js?");
 
 /***/ })
 

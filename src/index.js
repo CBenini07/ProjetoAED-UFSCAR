@@ -1,7 +1,3 @@
-import {test} from "./modulos/hello.js"
+import { DOM } from "./modulos/DOM";
 
-console.log('a');
-console.log('b');
-console.log('c');
-//a
-test();
+document.addEventListener('DOMContentLoaded', DOM.init);
