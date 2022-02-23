@@ -27,6 +27,15 @@ const DOM = (() => {
             //Inserindo linha no DOM
             mainDiv.appendChild(linha);
         }
+
+        //Agora adicionando os atributos/eventListeners para o teclado
+        const teclas = document.querySelectorAll('.button');
+        teclas.forEach(tecla =>{
+            tecla.setAttribute('data-letra', tecla.innerText);
+            tecla.addEventListener('click', () => { console.log(tecla.textContent)} );
+        });
+
+        //
     }
 
     return { init }
