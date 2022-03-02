@@ -42,6 +42,7 @@ body{
     border: 0.2rem solid black;
     background-color: darkslategray;
     border-radius: 10%;
+    color: white;
 }
 
 /* Estilando teclado */
