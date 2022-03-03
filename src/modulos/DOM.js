@@ -102,7 +102,7 @@ const DOM = (() => {
             element.style.backgroundColor = "green";
         }
         else if(posicao == 1){
-            if(element.style.backgroundColor != "green") element.style.backgroundColor = "yellow";
+            element.style.backgroundColor = "yellow";
         }
         else{
             element.style.backgroundColor = "red"
