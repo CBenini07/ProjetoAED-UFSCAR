@@ -1,3 +1,5 @@
+//Importando palavras
+import palavras from "../etc/arrayUsado.json"
 import { PilhaInteligente } from "./PilhaInteligente";
 import { FilaBurra } from "./FilaBurra";
 import { ListaCadastral } from "./ListaCadastral";
@@ -5,9 +7,8 @@ import { ListaCadastral } from "./ListaCadastral";
 //Criando a instancia da aplicacao principal
 
 const app = (()=>{
-
     //TRABALHANDO NO TECLADO (Cores)
-    //Armazenamento das teclas ja tentadas
+    //Armazenamento das teclas ja tentadas  
     const lCorreta = ListaCadastral();
     const lSemiCorreta = ListaCadastral();
     const lIncorreta = ListaCadastral();
@@ -32,7 +33,6 @@ const app = (()=>{
 
             //Tenta retirar elemento da semicorreta, caso o usuario inseriu ela mal posicionada anteriormente
             lSemiCorreta.remove(x);
-            //Possivel melhoria -> Deixar parte do teclado metade Verde/Amarela para palavras com 2+ letras iguais 
         }
         //Agora, as semicorretas
         while(!pSemiCorreta.vazia()){

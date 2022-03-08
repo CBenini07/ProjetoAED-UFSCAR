@@ -1,5 +1,4 @@
 //Metodos de DOM aqui
-
 const DOM = (() => {
     //Variáveis locais
     const cell = [];
