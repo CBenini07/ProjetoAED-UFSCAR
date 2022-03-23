@@ -9,12 +9,13 @@ arrayJaUsadosFiltrado = []
 
 for item in arrayBase:
     if(item.isascii()):
-        arrayBaseFiltrado.append(item)
+        arrayBaseFiltrado.append(item.upper())
     
 
 for item in arrayJaUsados:
     if(item.isascii()):
-        arrayJaUsadosFiltrado.append(item)
+        arrayJaUsadosFiltrado.append(item.upper())
+        arrayBaseFiltrado.append(item.upper())
 
 with open('arrayBase.json', 'w') as outfile:
     json.dump(arrayBaseFiltrado, outfile)

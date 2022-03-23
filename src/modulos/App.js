@@ -1,8 +1,7 @@
 //Importando palavras
 import palavras from "../etc/arrayUsado.json";
-import dicionario from "../etc/arrayBase.json";
+//import dicionario from "../etc/arrayBase.json"; <- pode ser utilizado p/ verificagem de palavras
 import { PilhaInteligente } from "./PilhaInteligente";
-import { FilaBurra } from "./FilaBurra";
 import { ListaCadastral } from "./ListaCadastral";
 import { FilaInteligente } from "./FilaInteligente";
 import { DOM } from "./DOM";
@@ -11,7 +10,7 @@ import { DOM } from "./DOM";
 
 const App = (()=>{
     //Escolhendo uma palavra aleatoria. Enfilar ela na funcao de comparacao
-    const palavra = palavras[Math.floor(Math.random() * palavras.length)].toUpperCase();    
+    const palavra = palavras[Math.floor(Math.random() * palavras.length)];    
 
     //Compara e roda uma funcao callback DOM especifica -> callbackCelula([posicoes corretas], [posicoes semicorretas], [posicoes incorretas], bool vitoria)
     function compara(tentativa, callbackTeclado, callbackCelula){
