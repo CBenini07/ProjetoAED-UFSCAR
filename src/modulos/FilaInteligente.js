@@ -21,17 +21,40 @@ function FilaInteligente(tamanho){
         return achou;
     }
 
+    //Verifica o elemento e remove uma instancia dele
+    function verificaRemoveElemento(elemento){
+        let valor, achou = false;
+
+        // retirando, comparando e repondo ao fim - rotacao completa, lista volta ao original
+        for(let i = 0; i < tamanho; i++){
+            
+            valor = fila.pop();
+
+            if (valor == elemento && !achou){
+                achou = true;
+            } else{
+                fila.push(valor); // reinserindo ao fim
+            }
+        }
+
+        return achou;
+    }
+
     // verifica se um dado elemento esta na posicao dada
     function verificaPosicao(elemento, posicao){
-        let valor, igual = false;
+        let igual = false;
+        let valor;
 
         // retira, compara e adiciona ao fim
         // ao fim do loop, rotacao completa eh feita e fila retorna posicoes
         // originais
         for(let i = 0; i < tamanho; i++){
             valor = fila.pop();
-            if( i == posicao )
+            if( i == posicao ){
                 igual = (valor == elemento);
+                console.log(`Valor do valor: ${valor}`);
+                console.log(`Valor do elemento: ${elemento}`);
+            }
             fila.push(valor);
         }
 
@@ -58,7 +81,7 @@ function FilaInteligente(tamanho){
     }
 
     //Inserindo metodos da filaburra, assim como metodos da filainteligente
-    return Object.assign({}, fila, {filasIguais, verificaElemento, verificaPosicao});
+    return Object.assign({}, fila, {filasIguais, verificaRemoveElemento, verificaElemento, verificaPosicao});
 }
 
 export{FilaInteligente}

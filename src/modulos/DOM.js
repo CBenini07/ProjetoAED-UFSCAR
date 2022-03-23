@@ -1,3 +1,4 @@
+import { App } from "./App";
 //Metodos de DOM aqui
 const DOM = (() => {
     //Variáveis locais
@@ -52,7 +53,6 @@ const DOM = (() => {
         console.log("Done loading!");
     }
 
-    //Funcoes privadas -------------
     function inserir(letra){
         if(colunaAtual < 5){
             cell[linhaAtual][colunaAtual].innerText = letra;
@@ -70,8 +70,11 @@ const DOM = (() => {
 
     function enter(){
         if(colunaAtual == 5){
-            //ENFILAR/EMPILHAR TODOS ELEMENTOS DA LINHA AQUI
-            cell[linhaAtual].forEach(item => console.log(item.innerText));
+            //Gerando a string
+            let tentativa = "";
+            cell[linhaAtual].forEach(item => tentativa += item.innerText);
+            App.compara(tentativa, colorirTeclado, colorirLetras);
+
             linhaAtual++;
             colunaAtual = 0;
         }
@@ -89,8 +92,32 @@ const DOM = (() => {
         else if(e.key.toUpperCase() != e.key.toLowerCase() && e.key.length == 1) inserir(e.key.toUpperCase());
     }
 
+    //Colorir caixa de letra
+    function colorirLetras(correta, semicorreta, incorreta, ganhou){
+        if(ganhou){
+            vitoria();
+            cell[linhaAtual].forEach(item => item.style.backgroundColor = "green");
+            //Preencher os demais e desabilitar input
+            for(let i = linhaAtual+1; i < 6; i++){
+                cell[i].forEach(item => item.style.backgroundColor = "black");
+            }
+            linhaAtual = 6;
+            return;
+        }
+        while(!correta.vazia()){
+            cell[linhaAtual][correta.pop()].style.backgroundColor = "green";
+        };
+        while(!semicorreta.vazia()){
+            cell[linhaAtual][semicorreta.pop()].style.backgroundColor = "khaki";
+        };
+        while(!incorreta.vazia()){
+            cell[linhaAtual][incorreta.pop()].style.backgroundColor = "red";
+        };
+    }
 
-    //Funcoes publicas -----------
+    function vitoria(){
+        console.log("Voce ganhou!");
+    }
 
     //Funcao para colorir teclado. Usar como callback
     function colorirTeclado(letra,posicao){
