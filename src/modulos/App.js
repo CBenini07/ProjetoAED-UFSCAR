@@ -104,10 +104,9 @@ const App = (()=>{
             if(!lCorreta.estaNaLista(x)){
                 callback(x, 0);
                 lCorreta.insere(x);
+                //Tenta retirar elemento da semicorreta, caso o usuario inseriu ela mal posicionada anteriormente
+                lSemiCorreta.remove(x);
             }
-
-            //Tenta retirar elemento da semicorreta, caso o usuario inseriu ela mal posicionada anteriormente
-            lSemiCorreta.remove(x);
         }
         //Agora, as semicorretas
         while(!pSemiCorreta.vazia()){
