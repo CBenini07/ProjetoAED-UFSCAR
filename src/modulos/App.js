@@ -11,6 +11,7 @@ import { DOM } from "./DOM";
 const App = (()=>{
     //Escolhendo uma palavra aleatoria. Enfilar ela na funcao de comparacao
     const palavra = palavras[Math.floor(Math.random() * palavras.length)];    
+    console.log(palavra);
 
     //Compara e roda uma funcao callback DOM especifica -> callbackCelula([posicoes corretas], [posicoes semicorretas], [posicoes incorretas], bool vitoria)
     function compara(tentativa, callbackTeclado, callbackCelula){
