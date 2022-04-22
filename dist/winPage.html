@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wordle</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="https://budgetmarine.com/wp-content/uploads/2011/07/320875.jpg">
+</head>
+
+<body>
+    <div id="header">
+        <img class="imgLogo" src="https://budgetmarine.com/wp-content/uploads/2011/07/320875.jpg" alt="Logotipo Cópia Termo" onclick="redirectHome()"> 
+    </div>
+
+    <div class="winPageBox">
+        <h1 class="winPageTitle">
+            Você Ganhou!
+        </h1>
+        <h1>
+            Gostaria de jogar novamente?
+        </h1>
+        <img class="imgReload" src="https://www.freeiconspng.com/thumbs/reload-icon/arrow-refresh-reload-icon-29.png"
+            alt="Reload Icon" onclick="redirectGame()">
+    </div>
+    <div class="madeBy">
+        <h2>
+            Made by: <br>
+            <a href="https://github.com/CBenini07">@CBenini07</a><br>
+            <a href="https://github.com/mau0414">@mau0414</a>
+        </h2>
+    </div>
+</body>
+
+</html>
+<script>
+    function redirectGame() {
+        window.location.href = "index.html";
+    }
+
+    function redirectHome() {
+        window.location.href = "home.html";
+    }
+</script>

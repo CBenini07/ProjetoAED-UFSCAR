@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wordle</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="https://budgetmarine.com/wp-content/uploads/2011/07/320875.jpg">
+</head>
+
+<body>
+    <div id="header">
+        <img class="imgLogo" src="https://budgetmarine.com/wp-content/uploads/2011/07/320875.jpg"
+            alt="Logotipo Cópia Termo">
+    </div>
+    <div class="winPageBox">
+        <h1 class="winPageTitle">
+            Wordle
+        </h1>
+        <button class="menuButton" onclick="redirectGame()">Jogar</button>
+        <button class="menuButton" onclick="redirectOptions()">Opções</button>
+        <button class="menuButton" onclick="redirectMadeBy()">GitHub</button>
+    </div>
+    <footer>Projeto de Algoritmo e Estrutura de Dados - UFSCar</footer>
+</body>
+
+</html>
+
+<script>
+    function redirectGame() {
+        window.location.href = "index.html";
+    }
+
+    function redirectOptions() {
+        alert("página ainda não disponível");
+    }
+
+    function redirectMadeBy() {
+        window.location.href = "https://github.com/CBenini07/ProjetoAED-UFSCAR";
+    }
+</script>
+

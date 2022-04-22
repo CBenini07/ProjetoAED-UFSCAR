@@ -108,7 +108,7 @@ const DOM = (() => {
             cell[linhaAtual][correta.pop()].style.backgroundColor = "green";
         };
         while(!semicorreta.vazia()){
-            cell[linhaAtual][semicorreta.pop()].style.backgroundColor = "khaki";
+            cell[linhaAtual][semicorreta.pop()].style.backgroundColor = "yellow";
         };
         while(!incorreta.vazia()){
             cell[linhaAtual][incorreta.pop()].style.backgroundColor = "red";
@@ -117,6 +117,7 @@ const DOM = (() => {
 
     function vitoria(){
         console.log("Voce ganhou!");
+        window.location.href = "winPage.html";
     }
 
     //Funcao para colorir teclado. Usar como callback
